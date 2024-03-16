@@ -26,6 +26,11 @@ imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 print(X)
 
+# code for handling outliers
+robust_scaler = RobustScaler()
+robust_scaled_data = robust_scaler.fit_transform(data)
+
+
 # Encoding categorical data
 # Encoding the Independent Variable
 from sklearn.compose import ColumnTransformer
