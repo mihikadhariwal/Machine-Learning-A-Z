@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 17 13:36:25 2020
-
-@author: prakh
-"""
-
 # Data Preprocessing Tools
 
 # Importing the libraries
@@ -26,7 +19,7 @@ imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 print(X)
 
-# code for handling outliers
+# Taking care of outliers
 robust_scaler = RobustScaler()
 robust_scaled_data = robust_scaler.fit_transform(data)
 
