@@ -19,9 +19,11 @@ imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 print(X)
 
-# Taking care of outliers
-robust_scaler = RobustScaler()
-robust_scaled_data = robust_scaler.fit_transform(data)
+# Handling Outliers with Z-score
+z = np.abs(stats.zscore(X))
+X = X[(z < 3).all(axis=1)]
+y = y[(z < 3).all(axis=1)]
+
 
 
 # Encoding categorical data
